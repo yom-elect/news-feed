@@ -1,0 +1,12 @@
+export const ICON_DEFAULT_HEIGHT = 15;
+export const TEXTINPUT_HEIGHT = 50;
+export const COMMENT_INPUT_HEIGHT = 35;
+export const HEADER_HEIGHT = 80;
+export const NEWS_CARD_HEIGHT = 100;
+export const NEWS_CARD_HEIGHT_MD = 145;
+export const ACTIVE_OPACITY = 0.85;
+export const TAB_HEIGHT = 70;
+export const POST_HEIGHT = 375;
+export const NEWS_TOPICS_POST_HEIGHT = 158;
+export const COMMENT_LINE_HEIGHT = 23;
+export const SHADOW_OPACITY = 0.25;
