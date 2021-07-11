@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as ROUTES from '../constant/routes';
 import NewsList from '../screens/NewsList';
 import SingleNews from '../screens/SingleNews';
+import Comments from '../screens/Comments';
+import { Header } from '../components';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,15 +30,21 @@ const App = () => {
         <Stack.Screen
           component={SingleNews}
           name={ROUTES.NEWS_SINGLE}
-          options={{ headerShown: true, headerTitle: "Single Page" }}
+          options={{ headerShown: true, headerTitle: "Single Feed" ,headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },}}
         />
   
   
-        {/* <Stack.Screen
+        <Stack.Screen
           component={Comments}
           name={ROUTES.COMMENTS}
           options={{ header: Header }}
-        /> */}
+        />
       </Stack.Navigator>
     );
   };

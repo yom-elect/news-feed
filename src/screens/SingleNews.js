@@ -1,11 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {ScrollView} from 'react-native';
+import {
+    SafeAreaView,
+    Box,
+    Post
+  } from '../components';
 
-const SingleNews = () => {
+const SingleNews = ({route}) => {
     return (
-        <View>
-            <Text>SingleNews</Text>
-        </View>
+        <>
+            <SafeAreaView>
+                <ScrollView>
+                <Box flex={1} backgroundColor="light">
+                    <Post {...route.params}/>
+                </Box>
+                </ScrollView>
+            </SafeAreaView>
+        </>
     );
 }
 

@@ -4,6 +4,9 @@ import {useNavigation} from '@react-navigation/native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useTheme} from '@shopify/restyle';
 
+import moment from 'moment';
+import Carousel from 'react-native-snap-carousel';
+
 import * as ROUTES from '../../../constant/routes';
 import Button from '../../inputs/Button';
 import Icon from '../Icon';
@@ -12,16 +15,12 @@ import Box from '../Box';
 import Text from '../Text';
 import TruncatedText from '../TruncatedText';
 
-import moment from 'moment';
-import Carousel from 'react-native-snap-carousel';
-
 const Post = ({
   id,
   Views,
   tag: blocObj,
   source: postURL,
   headline,
-  caption,
   summary,
   username,
   createdAt,
@@ -143,7 +142,20 @@ const Post = ({
               <Button
                 alignItems="center"
                 flexDirection="row"
-                onPress={()=>{}}>
+                onPress={()=>navigation.navigate(ROUTES.NEWS_SINGLE, {
+                  id,
+                  Views,
+                  tag: blocObj,
+                  source: postURL,
+                  headline,
+                  summary,
+                  username,
+                  createdAt,
+                  profilePicture: avatarURL,
+                  single:true,
+                  isActive: true,
+                  autoPlay: true
+                })}>
                 <Avatar imgSrc={{uri: avatarURL}} />
                 <Box>
                   <Text
