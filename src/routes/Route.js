@@ -1,31 +1,42 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as ROUTES from '../constant/routes';
+import NewsList from '../screens/NewsList';
+import SingleNews from '../screens/SingleNews';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 
 const App = () => {
     return (
-      <Stack.Navigator headerMode="screen" initialRouteName={ROUTES.NEWS_LIST}>
+      <Stack.Navigator initialRouteName={ROUTES.NEWS_LIST}>
         <Stack.Screen
-          component={AppTab}
+          component={NewsList}
           name={ROUTES.NEWS_LIST}
-          options={{ headerShown: false }}
+          options={{ 
+            title: 'News Feed',
+            headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          }}
         />
   
         <Stack.Screen
-          component={Personalize}
+          component={SingleNews}
           name={ROUTES.NEWS_SINGLE}
-          options={{ headerShown: false }}
+          options={{ headerShown: true, headerTitle: "Single Page" }}
         />
   
   
-        <Stack.Screen
+        {/* <Stack.Screen
           component={Comments}
           name={ROUTES.COMMENTS}
           options={{ header: Header }}
-        />
+        /> */}
       </Stack.Navigator>
     );
   };

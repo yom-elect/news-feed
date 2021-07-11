@@ -1,7 +1,7 @@
 import {createTheme} from '@shopify/restyle';
 import {RFValue, RFPercentage} from 'react-native-responsive-fontsize';
 
-import * as COLORS from 'src/constants/colors';
+import * as COLORS from '../constant/colors';
 
 const palette = {
   primary: COLORS.PRIMARY,

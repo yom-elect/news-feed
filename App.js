@@ -1,21 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import { Provider } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
+import { Provider} from 'react-redux';
+import {ThemeProvider} from '@shopify/restyle';
+import { StyleSheet, View, Text } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import store from './src/store';
 import {primaryTheme} from './src/styles/theme';
 import AppNavigator from './src/routes/Route';
+import NewsList from './src/screens/NewsList';
 
 export default function App() {
   const{ dispatch } = store;
 
   useEffect(() => {
     // TODO added netinfo
-    const netInfoUnsubscribe = NetInfo.addEventListener((state) => {
-      console.log('Is connected', state.isConnected);
-      dispatch.settings.updateNetInfo(state.isConnected);
+    const netInfoUnsubscribe = NetInfo.addEventListener(({isConnected}) => {
+      dispatch.settings.updateNetInfo(isConnected);
     });
 
     return () => {
@@ -39,9 +40,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
 });

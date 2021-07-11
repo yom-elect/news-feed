@@ -1,10 +1,11 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 
 const SingleNews = () => {
     return (
-        <div>
-            SingleNews
-        </div>
+        <View>
+            <Text>SingleNews</Text>
+        </View>
     );
 }
 

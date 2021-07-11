@@ -3,7 +3,7 @@
 export const settings = {
     state: true,
     reducers: {
-        update(_state, payload){
+        updateConnection(_state, payload){
             return payload
         }
     },
