@@ -45,7 +45,7 @@ const Comments = ({route}) => {
   const handleComment = async (comment) => {
     if (comment) {
       setComments([...comments, {
-          newsId: id,
+          newsId: Math.floor(Math.random() * id) + id,
           name: "Jan Wuckert",
           avatar: "https://res.cloudinary.com/clane-company-ltd/image/upload/q_auto/1_oDL_zBQ8_M10ib1AXthTNw.jpg",
           comment

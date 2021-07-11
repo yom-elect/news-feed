@@ -7,7 +7,6 @@ import * as DIMENSIONS from '../../../constant/dimensions';
 import Box from '../../content/Box';
 import Text from '../../content/Text';
 import Button from '../Button';
-import KeyboardAvoidingView from '../../navigation/KeyboardAvoidingView';
 
 const Comment = ({handleComment}) => {
   const theme = useTheme();
@@ -29,7 +28,6 @@ const Comment = ({handleComment}) => {
   };
 
   return (
-    <KeyboardAvoidingView>
        <Box
       alignItems="center"
       borderRadius="full"
@@ -59,7 +57,6 @@ const Comment = ({handleComment}) => {
         </Text>
       </Button>
     </Box>
-    </KeyboardAvoidingView>
   );
 };
 
